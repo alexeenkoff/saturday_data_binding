@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout>
+
+    <data>
+
+        <import type="android.view.View"/>
+
+        <import type="java.util.List"/>
+
+        <import type="java.lang.String"/>
+
+        <import type="ru.ltst.saturday_data_binding.utils.StringUtils"/>
+
+        <variable
+            name="data"
+            type="ru.ltst.saturday_data_binding.ui.imports.ImportsData"/>
+
+        <variable
+            name="stringList"
+            type="List&lt;String>"/>
+        <variable
+            name="camelString"
+            type="java.lang.String"/>
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:background="@android:color/holo_orange_dark"
+                  android:orientation="vertical">
+
+        <FrameLayout
+            android:paddingLeft="@dimen/imports_frame_padding"
+            android:paddingRight="@dimen/imports_frame_padding"
+            android:paddingTop="@dimen/imports_frame_padding"
+            android:paddingBottom="@dimen/imports_frame_padding"
+            android:layout_width="@dimen/imports_frame_width_height"
+            android:layout_height="@dimen/imports_frame_width_height"
+            android:layout_gravity="center">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|top"
+                android:src="@drawable/ic_bluetooth_connected_black_48dp"
+                />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|bottom"
+                android:src="@drawable/ic_gps_fixed_black_48dp"
+                android:visibility="@{data.showAll ? View.VISIBLE : View.GONE}"
+                />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|top"
+                android:src="@drawable/ic_signal_wifi_2_bar_lock_black_48dp"
+                android:visibility="@{data.showAll ? View.VISIBLE : View.GONE}"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|bottom"
+                android:src="@drawable/ic_usb_black_48dp"/>
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_marginTop="@dimen/imports_list_margin_top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="@{stringList!=null ? View.VISIBLE : View.GONE}">
+
+            <TextView
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textSize="@dimen/text_size_16sp"
+                android:paddingLeft="@dimen/imports_text_padding"
+                android:paddingRight="@dimen/imports_text_padding"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@{stringList[0]}"
+                />
+
+            <TextView
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textSize="@dimen/text_size_16sp"
+                android:paddingLeft="@dimen/imports_text_padding"
+                android:paddingRight="@dimen/imports_text_padding"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@{stringList[1]}"
+                />
+
+            <TextView
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textSize="@dimen/text_size_16sp"
+                android:paddingLeft="@dimen/imports_text_padding"
+                android:paddingRight="@dimen/imports_text_padding"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@{stringList[2]}"
+                />
+            <TextView
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textSize="@dimen/text_size_16sp"
+                android:paddingLeft="@dimen/imports_text_padding"
+                android:paddingRight="@dimen/imports_text_padding"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@{stringList[3]}"
+                />
+            <TextView
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textSize="@dimen/text_size_16sp"
+                android:paddingLeft="@dimen/imports_text_padding"
+                android:paddingRight="@dimen/imports_text_padding"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@{stringList[4]?? stringList[0]}"
+                />
+        </LinearLayout>
+        <TextView
+            android:layout_marginTop="@dimen/imports_list_margin_top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="@dimen/text_size_16sp"
+            android:textStyle="bold"
+            android:text="@{StringUtils.camelString(camelString)}"/>
+    </LinearLayout>
+</layout>

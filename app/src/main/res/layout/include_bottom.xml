@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="user"
+            type="ru.ltst.saturday_data_binding.ui.include.User"/>
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:background="@color/pink"
+                  android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@{user.email}"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_size_16sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@{user.phone}"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_size_16sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@{@string/include_age_format(user.age)}"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_size_16sp"
+            android:textStyle="bold"/>
+    </LinearLayout>
+</layout>

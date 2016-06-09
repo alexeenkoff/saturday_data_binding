@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">saturday-data-binding</string>
+    <string name="main_first_fragment">first binding</string>
+
+    <string name="events_first_button">first button</string>
+    <string name="events_second_button">second button</string>
+    <string name="main_events_import_list">import list</string>
+    <string name="main_events_fragment">events</string>
+
+    <string name="main_imports_fragment_all">imports all</string>
+    <string name="main_imports_fragment_not_all">imports not all</string>
+
+    <string name="include_age_format">Age of user is %d</string>
+    <string name="main_include">include</string>
+    <string name="main_auto_change">auto change</string>
+
+
+</resources>
